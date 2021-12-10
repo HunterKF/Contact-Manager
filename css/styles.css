@@ -1,0 +1,154 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  border: 5px solid purple;
+  display: grid;
+  grid-template-rows: 30px 100px 20px 1fr 20px;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+  grid-template-areas:
+    "nav"
+    "header"
+    "filter"
+    "main"
+    "footer";    
+  /*Each string is a row on the grid*/
+  /*Since there are two columns, you have to type the area name for each column, hence 'header header'*/
+  /*To leave a space, use a . and it will make it an empty cell*/
+}
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+main {
+  grid-area: main; /*area name: main*/
+  background-color: red;
+  height: 100vh;
+}
+
+
+/* Profile/Setting Bar */
+nav {
+  grid-area: nav; 
+  background-color: green;
+}
+.nav_wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+}
+i {
+  font-size: 1.25rem;
+  padding: 5px 5px;
+  color: gray;
+}
+/* Header/Filter  */
+header {
+  grid-area: header; /*area name: header*/
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+}
+.filter_wrapper {
+  grid-area: filter;
+  display: flex;
+  flex-flow: row;
+  justify-content: right;
+}
+
+/* Profile Container */
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+  
+/* Profile Card */
+
+.img_icon {
+  border: 3px solid black;
+  width: 100px;
+  border-radius: 50%; 
+  position: absolute;
+}
+/* .img-position {
+  object-position: 100px 50px;
+} */
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.card-content {
+  display: grid;
+  /* grid-template-rows: minmax(50px, 1fr) 20px 20px; */
+  /* grid-template-columns: 2fr  1fr; */
+  grid-template-areas:
+    "name name"
+    "subtitle subtitle"
+    "phone plus";    
+  justify-items: center;
+  align-items: center;
+  margin-top: 50px;
+  min-width: 11rem;
+  height: 170px;
+}
+.card-name {
+  grid-area: name;
+}
+.phone-icon {
+  grid-area: phone;
+}
+.plus-icon {
+  grid-area: plus;
+}
+
+#abs1 {
+  top: -40px;
+  left: 40px;
+}
+.card-subtitle {
+  grid-area: subtitle;
+  min-height: 30px;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  padding: 0 !important;
+  font-size: .875em;
+  color: #6c757d;
+  text-decoration: none;
+  list-style: none;
+  list-style-type: none;
+  list-style-position: inside;
+}
+/* Footer */
+footer {
+  grid-area: footer; /*area name: footer*/
+  background-color: black;
+  height: 4rem;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add Button */
+.add-button {
+ 
+}
