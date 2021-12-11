@@ -9,10 +9,10 @@ html, body {
 }
 .container {
   min-height: 100%;
-  border: 5px solid purple;
+  /* border: 5px solid purple; */
   display: grid;
   grid-template-rows: 30px 100px 20px 1fr 20px;
-  grid-template-columns: 100%;
+ 
   grid-gap: 10px;
   grid-template-areas:
     "nav"
@@ -31,38 +31,45 @@ html, body {
 
 main {
   grid-area: main; /*area name: main*/
-  background-color: red;
-  height: 100vh;
+  /* background-color: red; */
 }
 
 
 /* Profile/Setting Bar */
 nav {
   grid-area: nav; 
-  background-color: green;
+  /* background-color: green; */
+  height: 5rem;
 }
 .nav_wrapper {
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
 }
-i {
-  font-size: 1.25rem;
-  padding: 5px 5px;
+.nav_wrapper i {
+  font-size: 1.5rem;
+  padding: 5px 10px;
   color: gray;
 }
 /* Header/Filter  */
 header {
   grid-area: header; /*area name: header*/
-  background-color: blue;
+  /* background-color: blue; */
   justify-content: center;
   align-items: center;
 }
+
+/* Filter/Search Bar */
 .filter_wrapper {
   grid-area: filter;
   display: flex;
   flex-flow: row;
-  justify-content: right;
+  align-items: stretch;
+  padding: 0px 5%
+}
+.filter_button {
+  margin-left: 20px;
+  font-size: 25px !important;
 }
 
 /* Profile Container */
@@ -73,6 +80,8 @@ header {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  padding-top: 4rem;
+
 }
   
 /* Profile Card */
@@ -105,7 +114,7 @@ header {
   justify-items: center;
   align-items: center;
   margin-top: 50px;
-  min-width: 11rem;
+  min-width: 10rem;
   height: 170px;
 }
 .card-name {
@@ -118,9 +127,9 @@ header {
   grid-area: plus;
 }
 
-#abs1 {
+.abs1 {
   top: -40px;
-  left: 40px;
+  left: 31px;
 }
 .card-subtitle {
   grid-area: subtitle;
@@ -138,7 +147,7 @@ header {
 /* Footer */
 footer {
   grid-area: footer; /*area name: footer*/
-  background-color: black;
+  /* background-color: black; */
   height: 4rem;
   bottom:0;
   left:0;
@@ -150,5 +159,71 @@ footer {
 
 /* Add Button */
 .add-button {
- 
+ size: 300px;
+}
+
+/* Modal Form */
+.modal1 {
+  position: fixed;
+  /* vvv Centers the modal on screen vvv */
+  top: 50%;
+  left: 50%;
+  /* scale(0) - makes it invisible */
+  transform: translate(-50%, -50%) scale(0);
+  /* This is how you put the transition so it gradually comes into existence */
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  /* z-index makes the modal go above everything else on the site */
+  z-index: 10;
+  background-color: #fff;
+  width: 500px;
+  max-width: 80%;
+}
+.modal1.active {
+  /* This is used to make modal1 appear. The default scale is set in .modal1, this is when active */
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header1 {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.modal-header1 .title1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-header1 .close-button1 {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.modal-body1 {
+  padding: 10px 15px;
+}
+#overlay1 {
+  position: fixed;
+  /* opactiy 0 makes it not shown */
+  opacity: 0;
+  /* This is how you put the transition so it gradually comes into existence */
+  transition: 200ms ease-in-out;
+  /* makes the overlay cover the whole screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+
+#overlay1.active {
+  /* This class makes it so, when active, the user cannot click on stuff in the background, such as the search bar */
+  opacity: 1;
+  pointer-events: all;
 }
