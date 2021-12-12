@@ -5,7 +5,7 @@
 }
 html, body {
   width: 100%;
-  height: 100%;
+  height: 95%;
 }
 .container {
   min-height: 100%;
@@ -162,7 +162,7 @@ footer {
  size: 300px;
 }
 
-/* Modal Form */
+/* Modal Container + Overlay */
 .modal1 {
   position: fixed;
   /* vvv Centers the modal on screen vvv */
@@ -178,7 +178,8 @@ footer {
   z-index: 10;
   background-color: #fff;
   width: 500px;
-  max-width: 80%;
+  max-width: 90%;
+  height: 85%;
 }
 .modal1.active {
   /* This is used to make modal1 appear. The default scale is set in .modal1, this is when active */
@@ -203,9 +204,6 @@ footer {
   font-size: 1.25rem;
   font-weight: bold;
 }
-.modal-body1 {
-  padding: 10px 15px;
-}
 #overlay1 {
   position: fixed;
   /* opactiy 0 makes it not shown */
@@ -220,10 +218,127 @@ footer {
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 }
-
-
 #overlay1.active {
   /* This class makes it so, when active, the user cannot click on stuff in the background, such as the search bar */
   opacity: 1;
   pointer-events: all;
+}
+/* Form Profile Picture Container */
+.form_img_icon {
+  border: 3px solid black;
+  width: 150px;
+  border-radius: 50%;
+  margin: 10px 15px;
+}
+.image_container {
+  width: 100%;
+  min-height: 200px;
+  height: auto;
+  background-color: aqua;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+/* Modal Body Content/Form */
+.modal-body1 {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+
+  overflow: auto;
+}
+.add-friend-input {
+  border-radius: .1rem;
+  background-color: aqua;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid white;
+  min-width: 274px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+.add-friend-input::placeholder {
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.add-form-input {
+  border-radius: .1rem;
+  color: black;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid aqua;
+  width: 100%;
+}
+.form-body {
+  padding: 1rem 2rem;
+  display: grid;
+}
+.form-body fieldset {
+  margin-top: 8px;
+}
+input {
+  line-height: 2em; // 2em is (2 * default line height)
+}
+.submit-button {
+  background-color: white;
+  font-size: 1.2rem;
+  margin: 20px 15px;
+  padding: 15px;
+  border-radius: 10px;
+  width: auto;
+}
+/* relationship buttons */
+.relationship-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+}
+.relationship-box {
+  border: 1px solid rgba(0, 0, 0, 0.0);
+  padding: 3px 10px;
+  margin: 10px 0;
+  border-radius: 1rem;
+  font-size: .8rem;
+}
+#friend-button {
+  color: white;
+  background-color: orange;
+}
+#friend-button:hover {
+  color: white;
+  background-color: blue;
+}
+#work-button {
+  color: white;
+  background-color: darkblue;
+}
+#work-button:hover {
+  color: white;
+  background-color: blue;
+}
+#acquaintance-button {
+  color: white;
+  background-color: darkcyan;
+}
+#acquaintance-button:hover {
+  color: white;
+  background-color: blue;
+}
+#family-button {
+  color: white;
+  background-color: darkmagenta;
+}
+#family-button:hover {
+  color: white;
+  background-color: blue;
 }
