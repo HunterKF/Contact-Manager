@@ -287,9 +287,9 @@ footer {
   margin-top: 8px;
 }
 input {
-  line-height: 2em; // 2em is (2 * default line height)
+  line-height: 2em;
 }
-.submit-button {
+.finish-button {
   background-color: white;
   font-size: 1.2rem;
   margin: 20px 15px;
